@@ -1,0 +1,66 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.2.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'spring-boot'
+
+repositories {
+
+    mavenLocal()
+    mavenCentral()
+
+    maven {
+        url "https://oss.jfrog.org/libs-snapshot"
+    }
+}
+
+configurations.all {
+    // check for updates every build
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+dependencies {
+    compile ("org.springframework.boot:spring-boot-starter-web")
+
+
+    compile "com.google.guava:guava:18.0"
+    compile ("org.ethereum:ethereumj-core:1.0.0-SNAPSHOT"){
+
+        exclude group: "log4j"
+        exclude group: "org.slf4j", module: "log4j-over-slf4j"
+        exclude group: "org.slf4j", module: "slf4j-log4j12"
+
+    }
+
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir './src'
+        }
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
+}
+
+task stage {
+    dependsOn bootRepackage
+}
+
+
+bootRun {
+    jvmArgs = ["-server", "-Xms3g"]
+}
+
