@@ -1,5 +1,8 @@
-## vmtrace.ether.camp
+## ethereumj.starter
 
-The server will be running and calculating all vmtraces
-on the ethereum network 
+Any Ethereum project can start here:
 
+```
+git clone https://github.com/ether-camp/ethereumj.starter
+gradle run
+```
