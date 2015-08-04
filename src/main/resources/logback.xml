@@ -30,7 +30,7 @@
         </filter>
 
         <encoder>
-            <pattern>%-5relative %-5level %logger{35} - %msg%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS} %-5level %logger{35} - %msg%n</pattern>
         </encoder>
     </appender>
 
@@ -40,7 +40,7 @@
     </root>
 
     <logger level="ERROR" name="general"/>
-    <logger level="OFF" name="net"/>
+    <logger level="INFO" name="net"/>
     <logger level="OFF" name="wire"/>
 
     <logger level="INFO" name="sync"/>
