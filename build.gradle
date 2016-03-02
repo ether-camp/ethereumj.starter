@@ -18,9 +18,8 @@ repositories {
     mavenLocal()
     mavenCentral()
 
-    maven {
-        url "http://dl.bintray.com/ethereum/maven"
-    }
+    maven { url "http://dl.bintray.com/ethereum/maven"}
+    maven { url "https://oss.jfrog.org/libs-snapshot/" }
 }
 
 configurations.all {
