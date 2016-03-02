@@ -32,7 +32,7 @@ dependencies {
 
 
     compile "com.google.guava:guava:18.0"
-    compile ("org.ethereum:ethereumj-core:1.1.0-STAGE-SNAPSHOT"){
+    compile ("org.ethereum:ethereumj-core:1.1.0-stage-SNAPSHOT"){
     
 
         exclude group: "log4j"
