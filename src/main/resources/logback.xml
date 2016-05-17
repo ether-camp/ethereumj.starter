@@ -5,13 +5,13 @@
         <file>logs/ethereum.log</file>
 
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>INFO</level>
+            <level>DEBUG</level>
         </filter>
 
 
         <append>true</append>
         <encoder>
-            <pattern>%-5relative %-5level %logger{35} - %msg%n</pattern>
+            <pattern>%date{HH:mm:ss.SSS} %-5level [%logger{35}] %msg%n</pattern>
         </encoder>
 
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -30,21 +30,38 @@
         </filter>
 
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} %-5level %logger{35} - %msg%n</pattern>
+            <pattern>%date{HH:mm:ss.SSS} %-5level [%logger{35}] %msg%n</pattern>
         </encoder>
     </appender>
 
     <root level="INFO">
-        <appender-ref ref="FILE" />
-        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="STDOUT"/>
     </root>
 
-    <logger level="ERROR" name="general"/>
-    <logger level="INFO" name="net"/>
-    <logger level="OFF" name="wire"/>
+    <logger level="INFO" name="org.springframework.web.servlet.DispatcherServlet"/>
+    <logger level="DEBUG" name="general"/>
+    <logger level="DEBUG" name="net"/>
+    <logger level="INFO" name="ethereum-service"/>
+    <logger level="ERROR" name="wire"/>
+    <logger level="DEBUG" name="discover"/>
+    <logger level="DEBUG" name="db"/>
+    <logger level="TRACE" name="sync"/>
+    <logger level="DEBUG" name="jsonrpc"/>
 
-    <logger level="INFO" name="sync"/>
-    <logger level="INFO" name="blockqueue"/>
+    <logger level="DEBUG" name="blockqueue"/>
+    <logger level="INFO" name="repository"/>
+    <logger level="INFO" name="blockchain"/>
+    <logger level="DEBUG" name="mine"/>
+    <logger level="INFO" name="discover"/>
+    <logger level="ERROR" name="java.nio"/>
+    <logger level="ERROR" name="io.netty"/>
+    <logger level="ERROR" name="wire"/>
+    <logger level="ERROR" name="VM"/>
+    <logger level="ERROR" name="trie"/>
+    <logger level="ERROR" name="state"/>
+    <logger level="ERROR" name="execute"/>
+    <logger level="ERROR" name="rlp"/>
 
 
 </configuration>
