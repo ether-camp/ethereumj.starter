@@ -33,7 +33,7 @@ dependencies {
 
 
     compile "com.google.guava:guava:18.0"
-    compile ("org.ethereum:ethereumj-core:1.2.5-RELEASE"){
+    compile ("org.ethereum:ethereumj-core:latest.release"){
 
         exclude group: "log4j"
         exclude group: "org.slf4j", module: "log4j-over-slf4j"
