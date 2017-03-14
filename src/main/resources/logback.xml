@@ -39,7 +39,8 @@
         <appender-ref ref="STDOUT"/>
     </root>
 
-    <logger level="INFO" name="org.springframework.web.servlet.DispatcherServlet"/>
+    <logger level="WARN" name="org.springframework"/>
+    <logger level="WARN" name="org.apache"/>
     <logger level="DEBUG" name="general"/>
     <logger level="DEBUG" name="net"/>
     <logger level="INFO" name="ethereum-service"/>

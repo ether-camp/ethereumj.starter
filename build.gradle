@@ -23,6 +23,9 @@ repositories {
     }
 }
 
+applicationDefaultJvmArgs = ["-Dsync.fast.enabled=true", "-Dlogback.configurationFile=src/main/resources/logback.xml"]
+
+
 configurations.all {
     // check for updates every build
     resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
